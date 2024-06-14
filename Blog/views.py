@@ -29,3 +29,14 @@ def INDEX(request):
         'category' :category,
     }
     return render(request, 'Main/index.html',context)
+def mainpost(request):
+
+    main_post = Post.objects.filter(Main_post=True, status=1)
+    category = Category.objects.all()
+
+    context = {
+
+        'main_post': main_post,
+        'category': category,
+    }
+    return render(request, 'Main/mainpost.html', context)

@@ -1,0 +1,22 @@
+{% extends 'Main/base.html' %}
+{% load static %}
+{% block content %}
+<style>
+
+    section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+</style>
+
+<section>
+    {% for i in main_post %}
+
+    <h2>{{i.tittle}}</h2>
+    <h6>{{i.author}}</h6>
+    <h6>{{i.date}}  <br> Category:{{i.category}}</h6>
+    <p class="excerpt mb-0">{{i.content |safe}}</p>
+    {% endfor %}
+</section>
+
+{% endblock %}

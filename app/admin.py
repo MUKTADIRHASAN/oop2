@@ -7,7 +7,6 @@ from .models import *
 class TagTublerInLine(admin.TabularInline):
     model = Tag
 
-
 class PostAdmin(admin.ModelAdmin):
     inlines = [TagTublerInLine]
     list_display = ['tittle', 'author', 'date', 'status', 'section', 'Main_post']
